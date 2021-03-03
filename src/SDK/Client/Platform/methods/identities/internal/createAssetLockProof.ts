@@ -18,7 +18,8 @@ export default async function createAssetLockProof(platform : Platform, assetLoc
     if (passFakeAssetLockProofForTests) {
         instantLock = createFakeInstantLock(assetLockTransaction.hash);
     } else {
-        instantLock = await account.waitForInstantLock(assetLockTransaction.hash);
+        // @ts-ignore
+        instantLock = await account.waitForInstantLock(assetLockTransaction.hash, 120000);
     }
 
     // @ts-ignore
