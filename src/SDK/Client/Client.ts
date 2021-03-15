@@ -66,6 +66,7 @@ export class Client extends EventEmitter {
         // Initialize DAPI Client
         const dapiClientOptions = {
             network: this.network,
+            timeout: 30000,
         };
 
         [

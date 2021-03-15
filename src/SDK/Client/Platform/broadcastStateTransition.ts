@@ -26,8 +26,9 @@ export default async function broadcastStateTransition(platform: Platform, state
 
     // Broadcasting state transition
     try {
-        await client.getDAPIClient().platform.broadcastStateTransition(stateTransition.toBuffer(), { timeout: 30000, retries: 1 });
+        await client.getDAPIClient().platform.broadcastStateTransition(stateTransition.toBuffer(), { timeout: 30000, retries: 0 });
     } catch (e) {
+        console.log(e);
         let data;
         let message;
 
